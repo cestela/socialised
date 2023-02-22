@@ -13,7 +13,7 @@ const App = () => {
     if (!user) {
       navigate("/login");
     }
-  });
+  }, []);
   return (
     <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}>
       <Routes>
