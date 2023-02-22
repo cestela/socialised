@@ -46,17 +46,13 @@ const UserProfile = () => {
 
   useEffect(() => {
     if (text === "Created") {
-      console.log("getting created pins");
       const createdPinsQuery = userCreatedPinsQuery(userId);
       client.fetch(createdPinsQuery).then((data) => {
-        console.log("data", data);
         setPins(data);
       });
     } else {
-      console.log("getting saved pins");
       const savedPinsQuery = userSavedPinsQuery(userId);
       client.fetch(savedPinsQuery).then((data) => {
-        console.log("data", data);
         setPins(data);
       });
     }

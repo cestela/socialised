@@ -39,7 +39,6 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
   };
 
   const deletePin = (id) => {
-    console.log(id);
     client.delete(id).then(() => {
       window.location.reload();
     });

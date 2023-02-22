@@ -18,12 +18,10 @@ const PinDetails = ({ user }) => {
     let query = pinDetailsQuery(pinId);
     if (query) {
       client.fetch(query).then((data) => {
-        console.log(data);
         setPinDetails(data[0]);
         if (data[0]) {
           query = pinDetailsMorePinQuery(data[0]);
           client.fetch(query).then((res) => {
-            console.log("res", res);
             setPins(res);
           });
         }
@@ -32,7 +30,6 @@ const PinDetails = ({ user }) => {
   };
 
   const addComment = () => {
-    console.log("entro aqui");
     if (comment) {
       setAddingComment(true);
       client
